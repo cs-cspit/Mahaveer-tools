@@ -1,0 +1,55 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="machiningCoilGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2640;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1a2640" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#machiningCoilGradient)" filter="url(#shadow)"/>
+  
+  <!-- Main Coil -->
+  <g transform="translate(100, 100)">
+    <!-- Outer Coil Ring -->
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#ffffff" stroke-width="8" opacity="0.9"/>
+    <!-- Inner Coil Ring -->
+    <circle cx="0" cy="0" r="25" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.8"/>
+    <!-- Inner Core -->
+    <circle cx="0" cy="0" r="12" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Coil Windings -->
+    <g opacity="0.7">
+      <circle cx="0" cy="0" r="37" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="0" cy="0" r="32" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="0" cy="0" r="28" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <circle cx="0" cy="0" r="16" fill="none" stroke="#ffffff" stroke-width="2"/>
+    </g>
+    
+    <!-- Wire Ends -->
+    <g opacity="0.8">
+      <!-- Left Wire -->
+      <path d="M-45 0 Q-55 -10 -65 0" stroke="#ffffff" stroke-width="4" fill="none"/>
+      <circle cx="-65" cy="0" r="3" fill="#ffffff"/>
+      
+      <!-- Right Wire -->
+      <path d="M45 0 Q55 10 65 0" stroke="#ffffff" stroke-width="4" fill="none"/>
+      <circle cx="65" cy="0" r="3" fill="#ffffff"/>
+    </g>
+    
+    <!-- Center Bolt -->
+    <rect x="-4" y="-4" width="8" height="8" rx="1" fill="#1a2640" opacity="0.8"/>
+  </g>
+  
+  <!-- Electric Sparks -->
+  <g opacity="0.6">
+    <path d="M40 30 L45 25 L42 35 L47 30" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M160 40 L155 35 L158 45 L153 40" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M160 160 L155 165 L158 155 L153 160" stroke="#ffffff" stroke-width="2" fill="none"/>
+    <path d="M40 170 L45 175 L42 165 L47 170" stroke="#ffffff" stroke-width="2" fill="none"/>
+  </g>
+</svg>

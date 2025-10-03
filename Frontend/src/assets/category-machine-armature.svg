@@ -1,0 +1,79 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="armatureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2640;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#1a2640" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#armatureGradient)" filter="url(#shadow)"/>
+  
+  <!-- Armature Assembly -->
+  <g transform="translate(100, 100)">
+    <!-- Central Shaft -->
+    <rect x="-6" y="-60" width="12" height="120" rx="6" fill="#ffffff" opacity="0.9"/>
+    
+    <!-- Commutator Segments -->
+    <g opacity="0.9">
+      <!-- Top Commutator -->
+      <rect x="-20" y="-55" width="40" height="15" rx="3" fill="#ffffff"/>
+      <!-- Commutator Segments -->
+      <line x1="-15" y1="-55" x2="-15" y2="-40" stroke="#1a2640" stroke-width="1"/>
+      <line x1="-5" y1="-55" x2="-5" y2="-40" stroke="#1a2640" stroke-width="1"/>
+      <line x1="5" y1="-55" x2="5" y2="-40" stroke="#1a2640" stroke-width="1"/>
+      <line x1="15" y1="-55" x2="15" y2="-40" stroke="#1a2640" stroke-width="1"/>
+      
+      <!-- Bottom Commutator -->
+      <rect x="-20" y="40" width="40" height="15" rx="3" fill="#ffffff"/>
+      <!-- Commutator Segments -->
+      <line x1="-15" y1="40" x2="-15" y2="55" stroke="#1a2640" stroke-width="1"/>
+      <line x1="-5" y1="40" x2="-5" y2="55" stroke="#1a2640" stroke-width="1"/>
+      <line x1="5" y1="40" x2="5" y2="55" stroke="#1a2640" stroke-width="1"/>
+      <line x1="15" y1="40" x2="15" y2="55" stroke="#1a2640" stroke-width="1"/>
+    </g>
+    
+    <!-- Armature Core -->
+    <ellipse cx="0" cy="0" rx="35" ry="25" fill="#ffffff" opacity="0.8"/>
+    
+    <!-- Slots and Windings -->
+    <g opacity="0.7">
+      <!-- Slot Lines -->
+      <line x1="-30" y1="-15" x2="-30" y2="15" stroke="#1a2640" stroke-width="2"/>
+      <line x1="-15" y1="-20" x2="-15" y2="20" stroke="#1a2640" stroke-width="2"/>
+      <line x1="0" y1="-22" x2="0" y2="22" stroke="#1a2640" stroke-width="2"/>
+      <line x1="15" y1="-20" x2="15" y2="20" stroke="#1a2640" stroke-width="2"/>
+      <line x1="30" y1="-15" x2="30" y2="15" stroke="#1a2640" stroke-width="2"/>
+    </g>
+    
+    <!-- Winding Coils -->
+    <g opacity="0.6">
+      <!-- Left Coil -->
+      <path d="M-40 -10 Q-50 -20 -40 -30 Q-30 -35 -20 -30 Q-10 -25 -20 -15" 
+            stroke="#ffffff" stroke-width="3" fill="none"/>
+      <path d="M-40 10 Q-50 20 -40 30 Q-30 35 -20 30 Q-10 25 -20 15" 
+            stroke="#ffffff" stroke-width="3" fill="none"/>
+      
+      <!-- Right Coil -->
+      <path d="M40 -10 Q50 -20 40 -30 Q30 -35 20 -30 Q10 -25 20 -15" 
+            stroke="#ffffff" stroke-width="3" fill="none"/>
+      <path d="M40 10 Q50 20 40 30 Q30 35 20 30 Q10 25 20 15" 
+            stroke="#ffffff" stroke-width="3" fill="none"/>
+    </g>
+    
+    <!-- Center Hub -->
+    <circle cx="0" cy="0" r="8" fill="#ffffff" opacity="0.9"/>
+    <circle cx="0" cy="0" r="4" fill="#1a2640" opacity="0.8"/>
+    
+    <!-- Magnetic Field Lines -->
+    <g opacity="0.4" stroke="#ffffff" stroke-width="1.5" fill="none">
+      <path d="M-60 -30 Q-70 0 -60 30"/>
+      <path d="M60 -30 Q70 0 60 30"/>
+      <path d="M-50 -40 Q-60 -10 -50 -10 Q-40 10 -50 40"/>
+      <path d="M50 -40 Q60 -10 50 -10 Q40 10 50 40"/>
+    </g>
+  </g>
+</svg>
