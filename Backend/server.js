@@ -86,8 +86,24 @@ const inquiryRoutes = require('./routes/inquiryRoutes');
 app.use('/api/inquiries', inquiryRoutes);
 
 // Test route
+// If running in production, serve the built frontend from ../Frontend/dist
+// This lets you deploy a single service for both API and frontend (optional).
+const path = require('path');
 
+if (process.env.NODE_ENV === 'production') {
+  const frontendDist = path.join(__dirname, '..', 'Frontend', 'dist');
+  console.log('Production mode: serving frontend from', frontendDist);
+  app.use(express.static(frontendDist));
+
+  // For SPA client-side routing, always return index.html for unknown routes
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendDist, 'index.html'));
+  });
+}
+
+// Start server (connects to DB first)
 startServer();
+
 app.get('/', async (req, res) => {
   res.send('API is running');
 });

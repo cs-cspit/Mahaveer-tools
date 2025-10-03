@@ -6,7 +6,7 @@ import logo from './assets/logo.png';
 import logo2 from './assets/logo2.png';
 import background from './assets/background.png';
 import product1 from './assets/product1.png';
-import product2 from './assets/product2.png';
+import product2 from './assets/Product2.png';
 import product3 from './assets/product3.jpg';
 import product4 from './assets/product4.png';
 import Slider from 'react-slick';
