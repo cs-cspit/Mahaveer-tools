@@ -25,6 +25,15 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+// Use FRONTEND_URL if set, otherwise default to localhost
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+// Set CORS headers to allow requests only from the frontend URL
+app.use(cors({
+  origin: FRONTEND_URL,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.json({ limit: '10mb' })); // 10MB JSON body limit
 
