@@ -6,7 +6,6 @@ const Inquiries = () => {
 
   const fetchInquiries = async () => {
     try {
-  const res = await fetch('https://mahaveer-tools.onrender.com/api/inquiries');
       const body = await res.json();
       if (!res.ok) throw new Error(body.error || 'Failed');
       setInquiries(body.inquiries || []);

@@ -5,6 +5,15 @@ import logo2 from './assets/logo2.png';
 export default function ProductCategories() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 600);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
   fetch('https://mahaveer-tools.onrender.com/api/categories')
@@ -108,8 +117,9 @@ export default function ProductCategories() {
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '2rem',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: 16,
+          width: '100%',
           justifyItems: 'center'
         }}>
           {categories.map(cat => (

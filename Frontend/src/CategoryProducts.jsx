@@ -13,6 +13,14 @@ function getUniqueSubcategories(products) {
 }
 
 export default function CategoryProducts() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 600);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const { category } = useParams();
   const { addToCart } = useCart();
   const [cat, setCat] = useState(null);
@@ -214,26 +222,29 @@ export default function CategoryProducts() {
       <div style={{
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '4rem 2rem',
-        display: 'grid',
-        gridTemplateColumns: '280px 1fr',
-        gap: '3rem',
-        alignItems: 'flex-start'
+        padding: isMobile ? '2rem 0.5rem' : '4rem 2rem',
+        display: isMobile ? 'block' : 'grid',
+        gridTemplateColumns: isMobile ? undefined : '280px 1fr',
+        gap: isMobile ? undefined : '3rem',
+        alignItems: isMobile ? undefined : 'flex-start'
       }}>
         {/* Filter Sidebar */}
         <div style={{ 
-          position: 'sticky',
-          top: '2rem',
+          position: isMobile ? 'static' : 'sticky',
+          top: isMobile ? undefined : '2rem',
           background: '#fff', 
           borderRadius: 16, 
-          padding: '2rem 1.5rem', 
+          padding: isMobile ? '1rem 0.5rem' : '2rem 1.5rem', 
           boxShadow: '0 4px 16px rgba(26,38,64,0.07)', 
-          border: '1px solid #e5e7eb'
+          border: '1px solid #e5e7eb',
+          marginBottom: isMobile ? '2rem' : 0,
+          width: isMobile ? '100%' : undefined,
+          maxWidth: isMobile ? '400px' : undefined
         }}>
           <h4 style={{ 
-            fontSize: '1.1rem', 
+            fontSize: isMobile ? '1rem' : '1.1rem', 
             fontWeight: 700, 
-            marginBottom: '1.5rem', 
+            marginBottom: isMobile ? '1rem' : '1.5rem', 
             color: '#1a2640' 
           }}>
             Filter by Type
