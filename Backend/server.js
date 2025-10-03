@@ -12,7 +12,15 @@ app.use('/api/products', addStockRoutes);
 
 // CORS configuration
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:5173', 'http://127.0.0.1:3000', 'http://127.0.0.1:5173'],
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:5173',
+    'https://mahaveer-tools.vercel.app',
+    'https://mahaveer-tools-git-main-sgp-3s-projects.vercel.app',
+    'https://mahaveer-tools-p8timngon-sgp-3s-projects.vercel.app'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
