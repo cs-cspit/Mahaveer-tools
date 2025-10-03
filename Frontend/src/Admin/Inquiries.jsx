@@ -6,6 +6,7 @@ const Inquiries = () => {
 
   const fetchInquiries = async () => {
     try {
+      const res = await fetch('https://mahaveer-tools.onrender.com/api/inquiries');
       const body = await res.json();
       if (!res.ok) throw new Error(body.error || 'Failed');
       setInquiries(body.inquiries || []);
@@ -24,7 +25,7 @@ const Inquiries = () => {
 
   const handleResolve = async (id) => {
     try {
-  const res = await fetch(`https://mahaveer-tools.onrender.com/api/inquiries/${id}/resolve`, { method: 'POST' });
+      const res = await fetch(`https://mahaveer-tools.onrender.com/api/inquiries/${id}/resolve`, { method: 'POST' });
       if (!res.ok) throw new Error('Failed');
       fetchInquiries();
     } catch (err) {
@@ -36,7 +37,7 @@ const Inquiries = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this inquiry?')) return;
     try {
-  const res = await fetch(`https://mahaveer-tools.onrender.com/api/inquiries/${id}`, { method: 'DELETE' });
+      const res = await fetch(`https://mahaveer-tools.onrender.com/api/inquiries/${id}`, { method: 'DELETE' });
       if (!res.ok) throw new Error('Failed');
       fetchInquiries();
     } catch (err) {
