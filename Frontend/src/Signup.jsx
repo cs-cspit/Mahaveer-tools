@@ -201,7 +201,7 @@ const Signup = () => {
             boxShadow: '0 2px 8px rgba(0,0,0,0.08)'
           }}
           onClick={() => {
-            window.location.href = 'http://localhost:5000/api/auth/google';
+            window.location.href = 'https://mahaveer-tools.onrender.com/api/auth/google';
           }}
           onMouseEnter={(e) => {
             e.target.style.background = '#f8fafc';

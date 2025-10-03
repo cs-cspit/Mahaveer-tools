@@ -21,7 +21,7 @@ const Cart = () => {
     try {
       setLoading(true);
       const token = getAuthToken();
-      const response = await fetch('http://localhost:5000/api/cart', {
+  const response = await fetch('https://mahaveer-tools.onrender.com/api/cart', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -43,7 +43,7 @@ const Cart = () => {
   const updateQuantity = async (productId, newQuantity) => {
     try {
       const token = getAuthToken();
-      const response = await fetch(`http://localhost:5000/api/cart/update/${productId}`, {
+  const response = await fetch(`https://mahaveer-tools.onrender.com/api/cart/update/${productId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ const Cart = () => {
   const removeItem = async (productId) => {
     try {
       const token = getAuthToken();
-      const response = await fetch(`http://localhost:5000/api/cart/remove/${productId}`, {
+  const response = await fetch(`https://mahaveer-tools.onrender.com/api/cart/remove/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -87,7 +87,7 @@ const Cart = () => {
   const clearCart = async () => {
     try {
       const token = getAuthToken();
-      const response = await fetch('http://localhost:5000/api/cart/clear', {
+  const response = await fetch('https://mahaveer-tools.onrender.com/api/cart/clear', {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

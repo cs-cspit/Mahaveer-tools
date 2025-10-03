@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       console.log('Attempting to login user:', email);
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+  const response = await fetch('https://mahaveer-tools.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+  const response = await fetch('https://mahaveer-tools.onrender.com/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...userData, verifyBy: 'email' }),
@@ -86,7 +86,7 @@ export const AuthProvider = ({ children }) => {
 
   const verifyCode = async (userId, code) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/verify-code', {
+  const response = await fetch('https://mahaveer-tools.onrender.com/api/auth/verify-code', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, code }),
@@ -107,7 +107,7 @@ export const AuthProvider = ({ children }) => {
 
   const resendCode = async (userId) => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/resend-code', {
+  const response = await fetch('https://mahaveer-tools.onrender.com/api/auth/resend-code', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId }),
@@ -146,7 +146,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const token = getAuthToken();
       if (!token) return { success: false, error: 'No token found' };
-      const response = await fetch('http://localhost:5000/api/auth/profile', {
+  const response = await fetch('https://mahaveer-tools.onrender.com/api/auth/profile', {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` }
       });

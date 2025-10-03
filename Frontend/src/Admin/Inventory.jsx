@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5000/api/categories';
-const ADD_URL = 'http://localhost:5000/api/addproduct';
-const UPDATE_URL = 'http://localhost:5000/api/updateproduct';
-const DELETE_URL = 'http://localhost:5000/api/deleteproduct';
+const API_URL = 'https://mahaveer-tools.onrender.com/api/categories';
+const ADD_URL = 'https://mahaveer-tools.onrender.com/api/addproduct';
+const UPDATE_URL = 'https://mahaveer-tools.onrender.com/api/updateproduct';
+const DELETE_URL = 'https://mahaveer-tools.onrender.com/api/deleteproduct';
 
 const Inventory = () => {
   const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 
-const CATEGORY_API = 'http://localhost:5000/api/categories';
-const PRODUCT_API = 'http://localhost:5000/api/products';
+const CATEGORY_API = 'https://mahaveer-tools.onrender.com/api/categories';
+const PRODUCT_API = 'https://mahaveer-tools.onrender.com/api/products';
 
 const CategorySubcategories = () => {
   const { categoryId } = useParams();

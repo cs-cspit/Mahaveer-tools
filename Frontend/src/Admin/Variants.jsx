@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 
-const PRODUCT_API = 'http://localhost:5000/api/products';
+const PRODUCT_API = 'https://mahaveer-tools.onrender.com/api/products';
 
 export default function Variants() {
   const { categoryId, subIdx } = useParams();

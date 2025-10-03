@@ -20,7 +20,7 @@ export default function ProductDetails() {
       setLoading(true);
       try {
         // Fetch product by ID (id may be product param in legacy route)
-        const res = await fetch(`http://localhost:5000/api/products/${id}`);
+  const res = await fetch(`https://mahaveer-tools.onrender.com/api/products/${id}`);
         if (!res.ok) throw new Error('Product fetch failed');
         const prod = await res.json();
         setProductInfo(prod);
@@ -28,7 +28,7 @@ export default function ProductDetails() {
   setMainImage(prod.image || prod.images?.[0] || null);
         // Fetch category for breadcrumbs
         if (prod.category) {
-          const catRes = await fetch(`http://localhost:5000/api/categories/${prod.category}`);
+          const catRes = await fetch(`https://mahaveer-tools.onrender.com/api/categories/${prod.category}`);
           if (catRes.ok) {
             const catData = await catRes.json();
             setCategoryInfo(catData);

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 
-const PRODUCT_API = 'http://localhost:5000/api/products';
-const CATEGORY_API = 'http://localhost:5000/api/categories';
+const PRODUCT_API = 'https://mahaveer-tools.onrender.com/api/products';
+const CATEGORY_API = 'https://mahaveer-tools.onrender.com/api/categories';
 
 export default function InventoryDetail() {
   const { categoryId } = useParams();

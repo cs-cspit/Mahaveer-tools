@@ -23,7 +23,7 @@ export default function CategoryProducts() {
   // Fetch category info
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/api/categories')
+  fetch('https://mahaveer-tools.onrender.com/api/categories')
       .then(res => res.json())
       .then(data => {
         let found = data.find(c => c._id === category || c.id === category);
@@ -43,7 +43,7 @@ export default function CategoryProducts() {
   useEffect(() => {
     if (!cat) return;
     setLoading(true);
-    fetch(`http://localhost:5000/api/products?category=${cat._id || cat.id}`)
+  fetch(`https://mahaveer-tools.onrender.com/api/products?category=${cat._id || cat.id}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data);

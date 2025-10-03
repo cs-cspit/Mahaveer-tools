@@ -7,7 +7,7 @@ export default function ProductCategories() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/categories')
+  fetch('https://mahaveer-tools.onrender.com/api/categories')
       .then(res => res.json())
       .then(data => {
         setCategories(data);

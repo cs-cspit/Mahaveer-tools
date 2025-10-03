@@ -7,7 +7,7 @@ const Reports = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-  fetch('http://localhost:5000/api/stock-report')
+  fetch('https://mahaveer-tools.onrender.com/api/stock-report')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
