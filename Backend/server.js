@@ -104,7 +104,8 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(frontendDist));
 
   // For SPA client-side routing, always return index.html for unknown routes
-  app.get('*', (req, res) => {
+  // Use '/*' instead of '*' to avoid path-to-regexp error in Express v5+
+  app.get('/*', (req, res) => {
     res.sendFile(path.join(frontendDist, 'index.html'));
   });
 }
