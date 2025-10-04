@@ -10,7 +10,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { login } = useAuth();
+  const { login, updateUser } = useAuth();
 
   // Get the intended destination from location state, default to home
   const from = location.state?.from?.pathname || '/';
@@ -23,9 +23,8 @@ const Login = () => {
     if (token) {
       // Store token and redirect
       localStorage.setItem('authToken', token);
-      
       // Fetch user data with the token
-  fetch('https://mahaveer-tools.onrender.com/api/auth/me', {
+      fetch('https://mahaveer-tools.onrender.com/api/auth/me', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -34,6 +33,7 @@ const Login = () => {
         .then(data => {
           if (data.user) {
             localStorage.setItem('user', JSON.stringify(data.user));
+            updateUser(data.user); // Update context immediately
             navigate(from, { replace: true });
           } else {
             setError('Failed to get user information');
