@@ -29,8 +29,8 @@ export const categories = [
     name: 'Machining Coil',
     image: machiningCoilImg,
     products: [
-      { id: 'coil-a', name: 'Copper Coil A', image: product2 },
-      { id: 'coil-b', name: 'Aluminium Coil B', image: product2 },
+      { id: 'AWG22', name: 'Machining Coil AWG22', image: product2 },
+      { id: 'AWG20', name: 'High Temp Coil AWG20', image: product1 },
     ],
   },
   {
@@ -38,8 +38,8 @@ export const categories = [
     name: 'Machine Armature',
     image: machineArmatureImg,
     products: [
-      { id: 'armature-x', name: 'Armature X', image: product3 },
-      { id: 'armature-y', name: 'Armature Y', image: product3 },
+      { id: 'coil-bM-9513-B', name: 'coil-bM-9513-B Armature', image: product3 },
+      { id: 'DV13VSS', name: 'DV13VSS Armature', image: product3 },
     ],
   },
 ];
